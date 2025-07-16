@@ -1,4 +1,4 @@
-package com.eventosacademicos.api.service;
+package com.example.eventosacademicos.api.service;
 
 import com.eventosacademicos.api.domain.palestrante.Palestrante;
 import com.eventosacademicos.api.domain.evento.Evento;

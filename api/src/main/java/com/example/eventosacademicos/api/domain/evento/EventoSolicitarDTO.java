@@ -1,4 +1,4 @@
-package com.eventosacademicos.api.domain.evento;
+package com.example.eventosacademicos.api.domain.evento;
 
 import java.util.Date;
 

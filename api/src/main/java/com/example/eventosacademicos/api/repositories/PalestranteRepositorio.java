@@ -1,4 +1,4 @@
-package com.eventosacademicos.api.repositories;
+package com.example.eventosacademicos.api.repositories;
 
 import com.eventosacademicos.api.domain.palestrante.Palestrante;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,24 +1,21 @@
-package com.eventosacademicos.api.service;
+package com.example.eventosacademicos.api.service;
 
-import com.eventosacademicos.api.domain.evento.Evento;
-import com.eventosacademicos.api.domain.evento.EventoDetalhesDTO;
-import com.eventosacademicos.api.domain.evento.EventoSolicitarDTO;
-import com.eventosacademicos.api.domain.evento.EventoRespostaDTO;
-import com.eventosacademicos.api.repositories.EventoRepositorio;
+import com.example.eventosacademicos.api.domain.evento.Evento;
+import com.example.eventosacademicos.api.domain.evento.EventoDetalhesDTO;
+import com.example.eventosacademicos.api.domain.evento.EventoSolicitarDTO;
+import com.example.eventosacademicos.api.domain.evento.EventoRespostaDTO;
+import com.example.eventosacademicos.api.repositories.EventoRepositorio;
+import com.example.eventosacademicos.api.repositories.PalestranteRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Service
 public class EventoService
@@ -63,8 +60,8 @@ public class EventoService
     public List<EventoRespostaDTO> getUpcomingEventos(int page, int size)
     {
         Pageable pageable = PageRequest.of(page, size);
-        Page<Evento> eventosPage = this.eventRepository.findUpcomingEventos(new Date(), pageable);
-        return eventosPage.map(event -> new EventoRespostaDTO(evento.getId(),
+        Page<Evento> eventosPage = this.eventoRepositorio.findUpcomingEventos(new Date(), pageable);
+        return eventosPage.map(evento -> new EventoRespostaDTO(evento.getId(),
                         evento.getTitle(),
                         evento.getDescription(),
                         evento.getDate(),

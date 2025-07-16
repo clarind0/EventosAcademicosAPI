@@ -1,10 +1,11 @@
-package com.eventosacademicos.api.domain.evento;
+package com.example.eventosacademicos.api.domain.evento;
 
-import com.eventostec.api.domain.address.Address;
+import com.eventosacademicos.api.domain.palestrante.Palestrante;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Table(name = "evento")
@@ -21,6 +22,6 @@ public class Evento {
     private String description;
     private Date date;
 
-    @OneToOne(mappedBy = "evento", cascade = CascadeType.ALL)
-    private Palestrante palestrante;
+    @ManyToMany(mappedBy = "evento", cascade = CascadeType.ALL)
+    private List<Palestrante> palestrante;
 }

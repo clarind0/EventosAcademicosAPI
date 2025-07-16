@@ -1,6 +1,5 @@
-package com.eventosacademicos.api.domain.evento;
+package com.example.eventosacademicos.api.domain.evento;
 
-import com.eventosacademicos.api.domain.coupon.CouponRequestDTO;
 
 import java.util.Date;
 import java.util.List;
@@ -10,6 +9,6 @@ public record EventoDetalhesDTO(
         UUID id,
         String title,
         String description,
-        Date date,
+        Date date
         ) {
 }
